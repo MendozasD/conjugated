@@ -1,0 +1,201 @@
+* {
+  --panchang: "Panchang", sans-serif;
+  --orange: #ff5c36;
+  font-family: "Satoshi", sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+.bg_button {
+  font-family: var(--panchang);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: white solid 1px;
+  background-color: transparent;
+}
+
+#bg_hollo {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("hollo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#container_index {
+  position: relative;
+  width: 98svw;
+  height: 100svh;
+}
+#print_btn {
+  position: absolute;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  rotate: -50grad;
+  border: solid white;
+  font-family: var(--panchang);
+}
+#container_bg_filter {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0;
+}
+#container_index #conjugation_box {
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  right: 35px;
+  left: 35px;
+  border-radius: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.84);
+}
+
+#conjugation_box #input_btn_box {
+  display: flex;
+  justify-content: center;
+}
+
+#verb_input {
+  font-family: var(--panchang);
+  border: none;
+  border-bottom: white 5px solid;
+  background-color: transparent;
+  color: white;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  width: 80%;
+}
+
+#los_btn {
+  background-image: url(Union.png);
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: center;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+#sichern_btn_container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+#sichern_btn_container #sichern_btn {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 5px 15px;
+  box-shadow: 10px 5px 5px var(--orange);
+  transition: box-shadow 200ms;
+}
+#sichern_btn_container #sichern_btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 15px var(--orange);
+}
+#current_verb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 80px;
+  top: 120px;
+}
+
+#current_verb table tbody tr td {
+  font-size: 1.5rem;
+  padding: 0 5px;
+}
+
+#current_verb table tbody tr td:first-child {
+  font-style: italic;
+  font-weight: 301;
+  text-align: right;
+}
+
+#current_verb table tbody tr td:last-child {
+  font-weight: 900;
+}
+
+/* Bubble Counter */
+#counter_bubble {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2;
+  /* BG Handle by class:bg_button  */
+}
+
+/* -----------CONJUGATED VERBS----------------- */
+
+#conjugated_verbs {
+  width: 95svw;
+  height: 100svh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  gap: 2%;
+  padding: 10px 10px 0 10px;
+}
+#conjugated_verbs .boxbox {
+  display: grid;
+  height: fit-content;
+  gap: 5px;
+  width: 20%;
+}
+#conjugated_verbs .boxbox:hover h1 {
+  text-decoration: underline 5px var(--orange);
+}
+#conjugated_verbs .boxbox h1 {
+  font-family: var(--panchang);
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+#conjugated_verbs .boxbox .verb_row {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+#conjugated_verbs .boxbox .verb_row p {
+  width: 50%;
+}
+#conjugated_verbs .boxbox .verb_row p:first-child {
+  font-style: italic;
+  text-align: right;
+}
+#conjugated_verbs .boxbox .verb_row .verb_cell {
+  font-weight: 901;
+}
+@media screen and (max-width: 900px) {
+  #conjugated_verbs .boxbox {
+    width: 100%;
+  }
+}
