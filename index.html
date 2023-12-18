@@ -6,6 +6,7 @@
 
     <!-- CSS Styling -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylesheets/counter_btn.css" />
 
     <!-- Fonts -->
     <link
@@ -59,13 +60,15 @@
             placeholder="Typen ein verb"
             value=""
           />
-          <input
+          <div
             id="los_btn"
             class="bg_button btn_cursor_pointer"
             type="button"
             value=""
             onclick="verbix.conjugate(document.getElementById('verb_input').value);"
-          />
+          >
+            <img src="assets/arrow.png" id="arrow_first" class="arrow_btn" />
+          </div>
         </div>
         <div id="current_verb" data-verbix-conjugate-tense="0"></div>
         <div id="sichern_btn_container">
@@ -78,177 +81,12 @@
         <a
           href="#conjugated_verbs"
           id="counter_bubble"
-          class="bg_button animate__animated"
+          class="bg_button animate__animated bounce_btn"
         ></a>
       </section>
     </div>
     <div id="conjugated_verbs">
       <button id="print_btn" class="magnet btn_cursor_pointer">Drucken</button>
-      <div id="suchen_verb_box" class="boxbox">
-        <h1>suchen</h1>
-        <div class="verb_row">
-          <p class="pronoun_cell">ich</p>
-          <p class="verb_cell">suche</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">du</p>
-          <p class="verb_cell">suchst</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">er/sie/es</p>
-          <p class="verb_cell">sucht</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">wir</p>
-          <p class="verb_cell">suchen</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">ihr</p>
-          <p class="verb_cell">sucht</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">sie/Sie</p>
-          <p class="verb_cell">suchen</p>
-        </div>
-        <span
-          class="material-symbols-outlined delete_btn_in_box"
-          onclick="logClickedElement(event)"
-        >
-          delete
-        </span>
-      </div>
-      <div id="vermissen_verb_box" class="boxbox">
-        <h1>vermissen</h1>
-        <div class="verb_row">
-          <p class="pronoun_cell">ich</p>
-          <p class="verb_cell">vermisse</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">du</p>
-          <p class="verb_cell">vermisst</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">er/sie/es</p>
-          <p class="verb_cell">vermisst</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">wir</p>
-          <p class="verb_cell">vermissen</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">ihr</p>
-          <p class="verb_cell">vermisst</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">sie/Sie</p>
-          <p class="verb_cell">vermissen</p>
-        </div>
-        <span
-          class="material-symbols-outlined delete_btn_in_box"
-          onclick="logClickedElement(event)"
-        >
-          delete
-        </span>
-      </div>
-      <div id="melden_verb_box" class="boxbox">
-        <h1>melden</h1>
-        <div class="verb_row">
-          <p class="pronoun_cell">ich</p>
-          <p class="verb_cell">melde</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">du</p>
-          <p class="verb_cell">meldest</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">er/sie/es</p>
-          <p class="verb_cell">meldet</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">wir</p>
-          <p class="verb_cell">melden</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">ihr</p>
-          <p class="verb_cell">meldet</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">sie/Sie</p>
-          <p class="verb_cell">melden</p>
-        </div>
-        <span
-          class="material-symbols-outlined delete_btn_in_box"
-          onclick="logClickedElement(event)"
-        >
-          delete
-        </span>
-      </div>
-      <div id="spielen_verb_box" class="boxbox">
-        <h1>spielen</h1>
-        <div class="verb_row">
-          <p class="pronoun_cell">ich</p>
-          <p class="verb_cell">spiele</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">du</p>
-          <p class="verb_cell">spielst</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">er/sie/es</p>
-          <p class="verb_cell">spielt</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">wir</p>
-          <p class="verb_cell">spielen</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">ihr</p>
-          <p class="verb_cell">spielt</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">sie/Sie</p>
-          <p class="verb_cell">spielen</p>
-        </div>
-        <span
-          class="material-symbols-outlined delete_btn_in_box"
-          onclick="logClickedElement(event)"
-        >
-          delete
-        </span>
-      </div>
-      <div id="schreiben_verb_box" class="boxbox">
-        <h1>schreiben</h1>
-        <div class="verb_row">
-          <p class="pronoun_cell">ich</p>
-          <p class="verb_cell">schreibe</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">du</p>
-          <p class="verb_cell">schreibst</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">er/sie/es</p>
-          <p class="verb_cell">schreibt</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">wir</p>
-          <p class="verb_cell">schreiben</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">ihr</p>
-          <p class="verb_cell">schreibt</p>
-        </div>
-        <div class="verb_row">
-          <p class="pronoun_cell">sie/Sie</p>
-          <p class="verb_cell">schreiben</p>
-        </div>
-        <span
-          class="material-symbols-outlined delete_btn_in_box"
-          onclick="logClickedElement(event)"
-        >
-          delete
-        </span>
-      </div>
       <div id="tun_verb_box" class="boxbox">
         <h1>tun</h1>
         <div class="verb_row">
@@ -448,8 +286,9 @@
         </span>
       </div>
     </div>
-    <script src="konjugieren.js"></script>
-    <script src="magnet.js"></script>
+    <script src="js/konjugieren.js"></script>
+    <script src="js/magnet.js"></script>
     <script src="js/pdf.js"></script>
+    <script src="js/click.js"></script>
   </body>
 </html>

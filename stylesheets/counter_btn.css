@@ -1,0 +1,83 @@
+.bg_button {
+  font-family: var(--panchang);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: white solid 1px;
+  background-color: transparent;
+}
+.bg_button:hover {
+  transition: box-shadow 200ms;
+  box-shadow: 1px 1px 40px var(--orange);
+}
+#sichern_btn_container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+#sichern_btn_container #sichern_btn {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 5px 15px;
+}
+#los_btn {
+  display: flex;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+#los_btn #arrow_first {
+  transition: transform ease 0.5s;
+}
+
+#los_btn:hover #arrow_first {
+  transform: translateX(150%);
+}
+
+#counter_bubble {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: none;
+  line-height: 75px;
+  transform: rotate(15grad);
+  transition: all 400ms ease;
+  /* BG Handle by class:bg_button  */
+}
+
+.bnw_animation {
+  color: black;
+  background-color: white;
+}
+
+.bounce_btn {
+  animation: bouncy 0.5s infinite;
+  animation-direction: alternate;
+}
+
+.bounce_btn:hover {
+  animation-play-state: paused;
+}
+
+@keyframes bouncy {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}
