@@ -7,14 +7,6 @@
   margin: 0;
   padding: 0;
 }
-
-.bg_button {
-  font-family: var(--panchang);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: white solid 1px;
-  background-color: transparent;
-}
-
 #bg_hollo {
   position: fixed;
   top: 0;
@@ -25,22 +17,10 @@
   background-position: center;
   background-size: cover;
 }
-
 #container_index {
   position: relative;
   width: 98svw;
   height: 100svh;
-}
-#print_btn {
-  position: absolute;
-  left: 10px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: transparent;
-  rotate: -50grad;
-  border: solid white;
-  font-family: var(--panchang);
 }
 #container_bg_filter {
   position: fixed;
@@ -61,7 +41,12 @@
   padding: 20px;
   background: rgba(0, 0, 0, 0.84);
 }
-
+#head_baby {
+  position: fixed;
+  z-index: 0;
+  width: 300px;
+  transform: rotate(20grad);
+}
 #conjugation_box #input_btn_box {
   display: flex;
   justify-content: center;
@@ -75,40 +60,7 @@
   color: white;
   font-size: clamp(1.5rem, 3vw, 3rem);
   width: 80%;
-}
-
-#los_btn {
-  background-image: url(Union.png);
-  background-repeat: no-repeat;
-  background-size: 55%;
-  background-position: center;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-}
-
-#sichern_btn_container {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-}
-
-#sichern_btn_container #sichern_btn {
-  margin: 0 auto;
-  font-size: 1.5rem;
-  color: white;
-  border-radius: 20px;
-  width: fit-content;
-  padding: 5px 15px;
-  box-shadow: 10px 5px 5px var(--orange);
-  transition: box-shadow 200ms;
-}
-#sichern_btn_container #sichern_btn:hover {
-  cursor: pointer;
-  box-shadow: 1px 1px 15px var(--orange);
+  outline-width: 0;
 }
 #current_verb {
   display: flex;
@@ -165,10 +117,21 @@
   padding: 10px 10px 0 10px;
 }
 #conjugated_verbs .boxbox {
+  overflow: hidden;
   display: grid;
   height: fit-content;
   gap: 5px;
   width: 20%;
+  padding: 10px 5px;
+  transition: position 0.3s ease;
+
+  /* Glass */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.9px);
+  -webkit-backdrop-filter: blur(2.9px);
 }
 #conjugated_verbs .boxbox:hover h1 {
   text-decoration: underline 5px var(--orange);
@@ -194,8 +157,84 @@
 #conjugated_verbs .boxbox .verb_row .verb_cell {
   font-weight: 901;
 }
+#print_btn {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  rotate: -50grad;
+  border: solid white;
+  font-family: var(--panchang);
+  cursor: pointer;
+}
+.delete_btn_in_box {
+  position: absolute;
+  border: white 1px solid;
+  padding: 2px;
+  border-radius: 50%;
+  right: -24px;
+  bottom: 10px;
+  transition: transform 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+}
+#conjugated_verbs .boxbox:hover .delete_btn_in_box {
+  transform: translateX(-30px);
+  background-color: white;
+  color: black;
+}
+
 @media screen and (max-width: 900px) {
   #conjugated_verbs .boxbox {
     width: 100%;
   }
+}
+
+/* Magnet */
+.magnet {
+  transition: transform 0.3s ease;
+}
+
+/* General, re-used classes */
+.btn_cursor_pointer {
+  cursor: pointer;
+}
+
+/* Buttons */
+.bg_button {
+  font-family: var(--panchang);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: white solid 1px;
+  background-color: transparent;
+}
+.bg_button:hover {
+  transition: box-shadow 200ms;
+  box-shadow: 1px 1px 40px var(--orange);
+}
+#sichern_btn_container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+#sichern_btn_container #sichern_btn {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 5px 15px;
+}
+#los_btn {
+  background-image: url(Union.png);
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: center;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }

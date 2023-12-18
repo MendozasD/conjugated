@@ -6,26 +6,29 @@
 
     <!-- CSS Styling -->
     <link rel="stylesheet" href="style.css" />
+
     <!-- Fonts -->
     <link
       href="https://api.fontshare.com/v2/css?f[]=panchang@700,800&f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap"
       rel="stylesheet"
     />
+
     <!-- PrintJS -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.js"
-      integrity="sha512-/fgTphwXa3lqAhN+I8gG8AvuaTErm1YxpUjbdCvwfTMyv8UZnFyId7ft5736xQ6CyQN4Nzr21lBuWWA9RTCXCw=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
 
     <!-- Animate -->
-    <head>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      />
-    </head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- MagnetMouse -->
+    <script src="https://cdn.jsdelivr.net/gh/fluffy-factory/magnet-mouse@latest/lib/magnet-mouse.min.js"></script>
 
     <!-- Material Icons -->
     <link
@@ -58,6 +61,7 @@
           />
           <input
             id="los_btn"
+            class="bg_button btn_cursor_pointer"
             type="button"
             value=""
             onclick="verbix.conjugate(document.getElementById('verb_input').value);"
@@ -65,22 +69,21 @@
         </div>
         <div id="current_verb" data-verbix-conjugate-tense="0"></div>
         <div id="sichern_btn_container">
-          <button id="sichern_btn" class="bg_button">Sichern</button>
+          <button id="sichern_btn" class="bg_button btn_cursor_pointer">
+            Sichern
+          </button>
         </div>
 
         <!-- Counter -->
         <a
           href="#conjugated_verbs"
           id="counter_bubble"
-          class="bg_button animate__animated animate__pulse"
-          >*</a
-        >
+          class="bg_button animate__animated"
+        ></a>
       </section>
     </div>
     <div id="conjugated_verbs">
-      <button id="print_btn" onclick="printJS('conjugated_verbs', 'html')">
-        Drücken
-      </button>
+      <button id="print_btn" class="magnet btn_cursor_pointer">Drucken</button>
       <div id="suchen_verb_box" class="boxbox">
         <h1>suchen</h1>
         <div class="verb_row">
@@ -107,7 +110,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">suchen</p>
         </div>
-        <span class="material-symbols-outlined"> delete </span>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="vermissen_verb_box" class="boxbox">
         <h1>vermissen</h1>
@@ -135,7 +143,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">vermissen</p>
         </div>
-        <span class="material-symbols-outlined"> delete </span>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="melden_verb_box" class="boxbox">
         <h1>melden</h1>
@@ -163,6 +176,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">melden</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="spielen_verb_box" class="boxbox">
         <h1>spielen</h1>
@@ -190,6 +209,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">spielen</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="schreiben_verb_box" class="boxbox">
         <h1>schreiben</h1>
@@ -217,6 +242,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">schreiben</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="tun_verb_box" class="boxbox">
         <h1>tun</h1>
@@ -244,6 +275,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">tun</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="suchen_verb_box" class="boxbox">
         <h1>suchen</h1>
@@ -271,6 +308,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">suchen</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="vermissen_verb_box" class="boxbox">
         <h1>vermissen</h1>
@@ -298,6 +341,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">vermissen</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="melden_verb_box" class="boxbox">
         <h1>melden</h1>
@@ -325,6 +374,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">melden</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="spielen_verb_box" class="boxbox">
         <h1>spielen</h1>
@@ -352,6 +407,12 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">spielen</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
       <div id="schreiben_verb_box" class="boxbox">
         <h1>schreiben</h1>
@@ -379,8 +440,16 @@
           <p class="pronoun_cell">sie/Sie</p>
           <p class="verb_cell">schreiben</p>
         </div>
+        <span
+          class="material-symbols-outlined delete_btn_in_box"
+          onclick="logClickedElement(event)"
+        >
+          delete
+        </span>
       </div>
     </div>
     <script src="konjugieren.js"></script>
+    <script src="magnet.js"></script>
+    <script src="js/pdf.js"></script>
   </body>
 </html>
