@@ -1,5 +1,6 @@
 window.onload = function () {
   counter();
+  conjugatingText();
 };
 
 const conjugatedVerbs = document.getElementById("conjugated_verbs");
@@ -8,6 +9,7 @@ const container = document.getElementById("container");
 const check = document.getElementById("sichern_btn");
 const counterBubble = document.getElementById("counter_bubble");
 const conjugationBox = document.getElementById("conjugation_box");
+const emptyText = document.getElementById("empty_text");
 let verbList = [];
 
 // Listing conjugated verbs
@@ -56,6 +58,10 @@ function checked() {
     <div class=verb_row><p class="pronoun_cell">sie/Sie</p><p class="verb_cell">${verbConjugations[6]}</p></div>
     <span class="material-symbols-outlined delete_btn_in_box" onclick="logClickedElement(event)">delete</span>
     </div>`;
+
+    emptyText.innerText = "Konjugiert verben";
+
+    // Remove inner text in conjugatedVerbs after adding the first one.
     conjugatedVerbs.innerHTML += verbBox;
     // Add to counter
     counter();
@@ -83,4 +89,10 @@ function counter() {
   counterBubble.innerHTML = document.querySelectorAll(
     "#conjugated_verbs .boxbox"
   ).length;
+}
+
+function conjugatingText() {
+  if (conjugatedVerbs.childElementCount < 2) {
+    emptyText.innerHTML += `<h1 id="empty_text" style="font-family:var(--panchang);padding:10px 20px">Du wirst hier die konjugiert Verben finden</h1>`;
+  }
 }

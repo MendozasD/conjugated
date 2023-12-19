@@ -74,6 +74,16 @@
   animation-play-state: paused;
 }
 
+#to_top_btn {
+  position: absolute;
+  rotate: -100grad;
+  bottom: 20px;
+  right: 20px;
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 20px 10px;
+}
+
 @keyframes bouncy {
   from {
     transform: translateY(0%);
