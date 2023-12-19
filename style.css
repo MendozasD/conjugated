@@ -185,10 +185,9 @@
   background-color: white;
   color: black;
 }
-
-/* Magnet */
-.magnet {
-  transition: transform 0.3s ease;
+#empty_text {
+  width: 100%;
+  text-align: center;
 }
 
 /* General, re-used classes */
