@@ -22,6 +22,9 @@
   width: 98svw;
   height: 100svh;
 }
+#conjugation_box {
+  transition: all 0.5s ease;
+}
 #container_bg_filter {
   position: fixed;
   top: 0;
@@ -64,14 +67,23 @@
   text-transform: lowercase;
 }
 #current_verb {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 20vh;
+  z-index: 2;
+}
+#current_verb::after {
+  display: none;
+  content: "";
+  width: 200px;
+  height: 200px;
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 80px;
-  top: 120px;
+  background-color: red;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(50px);
 }
 
 #current_verb table tbody tr td {
