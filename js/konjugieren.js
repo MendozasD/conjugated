@@ -16,7 +16,6 @@ function checked() {
   // Variable storing the value of the input field to conjugate.
   let verbConjugations = [];
   verbConjugations.push(document.getElementById("verb_input").value);
-  console.log(verbConjugations[0]);
 
   // Selecting "table" which has the current conjugated verb and its 6 items +
   // item 0 containing the inputed verb or first value.
@@ -26,7 +25,6 @@ function checked() {
   for (let i = 0; i < rows.length; i++) {
     verbConjugations.push(rows[i].lastChild.innerText);
   }
-  console.log(verbConjugations);
   verbList.push(verbConjugations);
 
   var alreadyConjugated = false;
