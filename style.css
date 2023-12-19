@@ -103,6 +103,7 @@
   padding: 10px 10px 0 10px;
 }
 #conjugated_verbs .boxbox {
+  position: relative;
   overflow: hidden;
   display: grid;
   height: fit-content;
